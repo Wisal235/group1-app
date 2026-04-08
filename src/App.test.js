@@ -1,8 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('shows group number and team members', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  
+  // check group number is displayed
+  expect(screen.getByText('Group 1')).toBeInTheDocument();
+  
+  // check all team members are displayed
+  expect(screen.getByText('Wisal Ali')).toBeInTheDocument();
+  expect(screen.getByText('Chibuokem Chinwendu')).toBeInTheDocument();
+  expect(screen.getByText('Tara Mohammedsaeed')).toBeInTheDocument();
+  expect(screen.getByText('Rebecca Rottler')).toBeInTheDocument();
 });
